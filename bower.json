@@ -1,0 +1,15 @@
+{
+  "name": "multi_templates_vuejs",
+  "version": "0.0.0",
+  "authors": [
+    "gouf"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
