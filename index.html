@@ -2,8 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script src="./bower_components/vue/dist/vue.js"></script>
+  <script src="./vue/components/hello.vue"></script>
+  <script src="./bower_components/jquery/dist/jquery.min.js"></script>
   <title></title>
 </head>
 <body>
+  <button id="init">Set initial data on click</button>
+  <div id="app">
+    <div v-for="name in names">
+      <component is="hello" v-bind:message="name"></component>
+    </div>
+  </div>
+
+  <!-- Set initial data outside of `new Vue({/* ... */})` -->
+  <script>var data = {foo: null, names: []}</script>
+
+  <script>new Vue({el: '#app', data: data})</script>
+
+  <!-- Pseude API request by button click -->
+  <script>$(function(){ $('#init').on('click', function() { data.names = ['gouf', 'alice', 'bob'] }) })</script>
 </body>
 </html>
